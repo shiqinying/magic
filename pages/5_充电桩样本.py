@@ -23,18 +23,6 @@ df_象前充_base = pd.read_excel(os.path.join('result_data','象前充_base.xls
 df_象前充_terminal = pd.read_excel(os.path.join('result_data','象前充_terminal.xlsx'))
 
 
-st.title('df_万城万充_base')
-df_万城万充_base
-st.title('df_万城万充_terminal')
-df_万城万充_terminal
-st.title('df_云快充_base')
-df_云快充_base
-st.title('df_云快充_terminal')
-df_云快充_terminal
-st.title('df_充电圈_base')
-df_充电圈_base
-st.title('df_充电圈_terminal')
-df_充电圈_terminal
 st.title('df_小桔充电_base')
 df_小桔充电_base
 st.title('df_小桔充电_terminal')
@@ -43,6 +31,19 @@ st.title('df_星星充电_base')
 df_星星充电_base
 st.title('df_星星充电_terminal')
 df_星星充电_terminal
+st.title('df_云快充_base')
+df_云快充_base
+st.title('df_云快充_terminal')
+df_云快充_terminal
+
+st.title('df_万城万充_base')
+df_万城万充_base
+st.title('df_万城万充_terminal')
+df_万城万充_terminal
+st.title('df_充电圈_base')
+df_充电圈_base
+st.title('df_充电圈_terminal')
+df_充电圈_terminal
 st.title('df_汇充电_base')
 df_汇充电_base
 st.title('df_汇充电_terminal')
