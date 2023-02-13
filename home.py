@@ -1,28 +1,48 @@
 import streamlit as st
 
-st.set_page_config(
-    page_title="Hello",
-    page_icon="👋",
-)
+import streamlit as st
 
-st.write("# Welcome to Streamlit! 👋")
 
-st.sidebar.success("Select a demo above.")
+import openai
+from loguru import logger
+openai.api_key = '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'
 
-st.markdown(
-    """
-    Streamlit is an open-source app framework built specifically for
-    Machine Learning and Data Science projects.
-    **👈 Select a demo from the sidebar** to see some examples
-    of what Streamlit can do!
-    ### Want to learn more?
-    - Check out [streamlit.io](https://streamlit.io)
-    - Jump into our [documentation](https://docs.streamlit.io)
-    - Ask a question in our [community
-        forums](https://discuss.streamlit.io)
-    ### See more complex demos
-    - Use a neural net to [analyze the Udacity Self-driving Car Image
-        Dataset](https://github.com/streamlit/demo-self-driving)
-    - Explore a [New York City rideshare dataset](https://github.com/streamlit/demo-uber-nyc-pickups)
-"""
-)
+
+def get_completion(question):
+    for i in range(5):
+        try:
+            response = openai.Completion.create(
+                model="text-davinci-003",
+                prompt=f"{question}\n",
+                temperature=0.9,
+                max_tokens=2048,
+                top_p=1,
+                frequency_penalty=0,
+                presence_penalty=0.6,
+                stop=None
+            )
+            result = response['choices'][0]['text']
+            logger.success(result)
+            return result
+        except Exception as e:
+            continue
+    return '哎呀，走神了'
+    
+
+st.write("# 全天下最爱你的老公👋")
+st.write("## 无所不能的老公👋👋👋")
+st.write("### 最不抠的老公👋👋👋👋")
+input_text = st.text_input('陈可爱:')
+
+if input_text:
+    st.write('老公思考中。。。。。。')
+    result = get_completion(question=input_text)
+    st.text('老公说：')
+    st.success(result)
+    st.balloons()
+
+if __name__ == '__main__':
+    # get_completion(question='学习中医有用吗？')
+    pass
+
+
