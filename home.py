@@ -14,7 +14,7 @@ openai.api_key = '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'
 
 
 def get_completion(question):
-    for i in range(10):
+    for i in range(3):
         try:
             response = openai.Completion.create(
                 model="text-davinci-003",
