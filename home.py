@@ -4,13 +4,14 @@
 # 导出 requirements.txt  pip install pipreqs ; cd current porject ; pipreqs
 #streamlit run home.py
 #https://shiqinying-magicai-home-r1gu35.streamlit.app/
+#https://platform.openai.com/account/usage
 import time
 import streamlit as st
 
 
 import openai
 from loguru import logger
-openai.api_key = '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'
+openai.api_key = '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'
 
 
 def get_completion(question):
