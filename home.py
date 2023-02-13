@@ -4,16 +4,17 @@
 # 导出 requirements.txt  pip install pipreqs ; cd current porject ; pipreqs
 #streamlit run home.py
 #https://shiqinying-magicai-home-r1gu35.streamlit.app/
+import time
 import streamlit as st
 
 
 import openai
 from loguru import logger
-openai.api_key = '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'
+openai.api_key = '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'
 
 
 def get_completion(question):
-    for i in range(5):
+    for i in range(10):
         try:
             response = openai.Completion.create(
                 model="text-davinci-003",
@@ -29,6 +30,7 @@ def get_completion(question):
             logger.success(result)
             return result
         except Exception as e:
+            time.sleep(i)
             continue
     return '哎呀，走神了'
     
@@ -38,8 +40,9 @@ st.write("## 无所不能的老公👋👋")
 st.write("### 最聪明的老公👋👋👋")
 st.write("#### 最不抠的老公👋👋👋👋")
 input_text = st.text_input('陈可爱:')
+buttern = st.button('🚀🚀🚀老公快告诉我🚀🚀🚀')
 
-if input_text:
+if input_text and buttern:
     st.write('老公思考中。。。。。。')
     result = get_completion(question=input_text)
     st.text('老公说：')
