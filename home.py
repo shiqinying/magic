@@ -1,4 +1,7 @@
-import streamlit as st
+# !/usr/bin/env python
+# coding=utf-8
+# pip3 install -r requirements.txt  -i https://pypi.douban.com/simple/
+# 导出 requirements.txt  pip install pipreqs ; cd current porject ; pipreqs
 
 import streamlit as st
 
@@ -30,8 +33,9 @@ def get_completion(question):
     
 
 st.write("# 全天下最爱你的老公👋")
-st.write("## 无所不能的老公👋👋👋")
-st.write("### 最不抠的老公👋👋👋👋")
+st.write("## 无所不能的老公👋👋")
+st.write("### 最聪明的老公👋👋👋")
+st.write("#### 最不抠的老公👋👋👋👋")
 input_text = st.text_input('陈可爱:')
 
 if input_text:
