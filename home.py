@@ -2,13 +2,13 @@
 # coding=utf-8
 # pip3 install -r requirements.txt  -i https://pypi.douban.com/simple/
 # 导出 requirements.txt  pip install pipreqs ; cd current porject ; pipreqs
-
+#streamlit run home.py
 import streamlit as st
 
 
 import openai
 from loguru import logger
-openai.api_key = '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'
+openai.api_key = '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'
 
 
 def get_completion(question):
