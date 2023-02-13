@@ -8,7 +8,7 @@ import streamlit as st
 
 import openai
 from loguru import logger
-openai.api_key = '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'
+openai.api_key = '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'
 
 
 def get_completion(question):
